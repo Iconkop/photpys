@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>图片压缩工具</h1>
+            <p>在浏览器中压缩图片，无需上传到服务器</p>
+        </header>
+
+        <main>
+            <section id="upload-area" class="card">
+                <h2>上传图片</h2>
+                <div class="drop-area" id="dropArea">
+                    <p>拖放图片到这里或</p>
+                    <label for="fileInput" class="upload-btn">选择图片</label>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+                <div class="file-info" id="fileInfo"></div>
+            </section>
+
+            <section id="settings-area" class="card">
+                <h2>压缩设置</h2>
+                <div class="settings-group">
+                    <label for="qualitySlider">质量</label>
+                    <input type="range" id="qualitySlider" min="0" max="100" value="80" class="slider">
+                    <span id="qualityValue">80%</span>
+                </div>
+                <div class="settings-group">
+                    <label for="maxWidthInput">最大宽度</label>
+                    <input type="number" id="maxWidthInput" value="1920" min="100" step="10">
+                    <span>像素</span>
+                </div>
+                <div class="settings-group">
+                    <label for="formatSelect">输出格式</label>
+                    <select id="formatSelect">
+                        <option value="jpeg">JPEG</option>
+                        <option value="png">PNG</option>
+                        <option value="webp">WebP</option>
+                    </select>
+                </div>
+                <button id="compressBtn" class="primary-btn">压缩图片</button>
+            </section>
+
+            <section id="preview-area" class="card">
+                <h2>预览</h2>
+                <div class="preview-container">
+                    <div class="preview-box">
+                        <h3>原图</h3>
+                        <div class="image-container" id="originalImageContainer">
+                            <p class="placeholder-text">上传图片后显示</p>
+                        </div>
+                        <div class="image-info" id="originalInfo"></div>
+                    </div>
+                    <div class="preview-box">
+                        <h3>压缩后</h3>
+                        <div class="image-container" id="compressedImageContainer">
+                            <p class="placeholder-text">压缩后显示</p>
+                        </div>
+                        <div class="image-info" id="compressedInfo"></div>
+                    </div>
+                </div>
+                <div class="download-area">
+                    <button id="downloadBtn" class="primary-btn" disabled>下载压缩图片</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2023 图片压缩工具 - 所有处理均在本地完成，不会上传到服务器</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
